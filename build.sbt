@@ -1,8 +1,8 @@
-name := """play-scala-web-starter"""
+name := """pmbrull"""
 version := "1.0-SNAPSHOT"
 scalaVersion := "2.12.8"
 
-lazy val root = (project in file(".")).enablePlugins(PlayScala)
+lazy val pmbrull = (project in file(".")).enablePlugins(PlayScala)
 pipelineStages := Seq(digest)
 
 libraryDependencies ++= Seq(

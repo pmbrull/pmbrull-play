@@ -1,0 +1,17 @@
+@(title: String, header: Html = Html(""), content: Html = Html(""))(javascripts: Html)
+@import play.api.Play
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>pmbrull - @title</title>
+    @header
+</head>
+<body>
+    <div>
+        <h2>I am the main template</h2>
+    </div>
+    @content
+</body>
+</html>

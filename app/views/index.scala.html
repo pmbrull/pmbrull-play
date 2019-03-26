@@ -1,12 +1,8 @@
 @()
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Home</title>
-        <link rel="shortcut icon" type="image/png"
-           href="@routes.Application.versioned("images/favicon.png")">
-    </head>
-    <body>
-        <h1>Hello Play</h1>
-    </body>
-</html>
+
+@content = {
+  <h2>Welcome to the landing page!</h2>
+}
+@templates.main("Welcome", content = content){
+<script></script>
+}
