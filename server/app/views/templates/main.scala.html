@@ -53,6 +53,7 @@
             <h2>I am the main template</h2>
         </div>
         @content
+        @scalajs.html.scripts("client", routes.Application.versioned(_).toString, name => getClass.getResource(s"/public/$name") != null)
     </div>
 
 </div>
