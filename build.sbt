@@ -1,7 +1,5 @@
 import sbtcrossproject.{crossProject, CrossType}
 
-herokuAppName in Compile := "pmbrull"
-
 name := """pmbrull"""
 version := "1.0-SNAPSHOT"
 
@@ -16,6 +14,9 @@ lazy val server = (project in file("server")).settings(commonSettings).settings(
     guice,
     specs2 % Test
   ),
+  // add heroku plugins
+  herokuAppName in Compile := "pmbrull",
+  herokuSkipSubProjects in Compile := false,
   // Compile the project before generating Eclipse files, so that generated .scala or .class files for views and routes are present
   EclipseKeys.preTasks := Seq(compile in Compile)
 ).enablePlugins(PlayScala).
