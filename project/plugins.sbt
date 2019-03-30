@@ -2,7 +2,7 @@
 resolvers += "Typesafe repository" at "https://repo.typesafe.com/typesafe/releases/"
 
 // Sbt plugins
-
+addSbtPlugin("com.heroku" % "sbt-heroku" % "1.0.1")
 // Use Scala.js 0.6.x
 addSbtPlugin("com.vmunier"                  % "sbt-web-scalajs"           % "1.0.8-0.6")
 addSbtPlugin("org.scala-js"                 % "sbt-scalajs"               % "0.6.26")
