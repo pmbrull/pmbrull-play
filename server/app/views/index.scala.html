@@ -1,0 +1,14 @@
+@()
+
+@content = {
+
+    <h2>Welcome to the landing page!</h2>
+
+    <ul>
+        <li>Scala.js shouts out: <em id="scalajsShoutOut"></em></li>
+    </ul>
+}
+
+@templates.main("Welcome", content = content){
+<script src="@routes.Application.versioned("")"></script>
+}

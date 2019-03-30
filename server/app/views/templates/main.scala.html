@@ -1,0 +1,64 @@
+@(title: String, content: Html = Html(""))(javascripts: Html)
+@import play.api.Play
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>pmbrull - @title</title>
+
+    <link rel="shortcut icon" type="image/png" href="@routes.Application.versioned("images/lambda_circle.png")" />
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" media="screen" href="@routes.Application.versioned("stylesheets/bootstrap.min.css")" />
+    <!-- main CSS -->
+    <link rel="stylesheet" media="screen" href="@routes.Application.versioned("stylesheets/main.css")" />
+    <link rel="stylesheet" media="screen" href="@routes.Application.versioned("stylesheets/navbar.css")" />
+    <!-- Sidenav Scrip -->
+</head>
+
+<body>
+<div class="page">
+
+    <!-- Sidenav HTML -->
+    <div class="sidebar">
+        <div class="navigation open">
+            <div class="toggle-wrapper">
+                <span class="show">&#9776;</span>
+                <span class="hide">&#9866;</span>
+            </div>
+            <div class="heading">pmbru\\</div>
+            <ul class="menu">
+                <li><a href="#!">Home</a></li>
+                <li class="active"><a href="#!">Blog</a></li>
+                <li class="has-menu">
+                    <a href="#!">Category</a>
+                    <ul class="menu">
+                        <li><a href="#!">jQuery</a></li>
+                        <li><a href="#!">HTML5</a></li>
+                        <li><a href="#!">CSS/CSS3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#!">Contact</a></li>
+                <li><a href="#!">About</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- !Sidenav HTML -->
+
+    <div class="content">
+        <div>
+            <h2>I am the main template</h2>
+        </div>
+        @content
+        @scalajs.html.scripts("client", routes.Application.versioned(_).toString, name => getClass.getResource(s"/public/$name") != null)
+    </div>
+
+</div>
+</body>
+    <script src="@routes.Application.versioned("scripts/jquery-3.3.1.min.js")"></script>
+    <!--<script src="@routes.Application.versioned("scripts/bootstrap.min.js")"></script>-->
+    <script src="@routes.Application.versioned("scripts/sidenav.js")"></script>
+</html>
