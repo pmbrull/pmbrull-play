@@ -1,5 +1,7 @@
 import sbtcrossproject.{crossProject, CrossType}
 
+herokuAppName in Compile := "pmbrull"
+
 name := """pmbrull"""
 version := "1.0-SNAPSHOT"
 
