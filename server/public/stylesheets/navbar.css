@@ -94,7 +94,6 @@
 
 .navigation .has-menu > .menu > li > a {
   padding-left: 45px;
-  transition: padding 1s;
 }
 
 .navigation .has-menu > .menu > li:last-child {
@@ -128,11 +127,10 @@
 }
 
 .navigation .toggle-wrapper {
-  border: 1px solid rgba(255,255,255,0.1);
-  border-left: none;
+  color: #3689e6;
   height: 52px;
   width: 51px;
-  background-color:  #3689e6;
+  background-color: transparent;
   overflow: hidden;
   position: absolute;
   top: -1px;
