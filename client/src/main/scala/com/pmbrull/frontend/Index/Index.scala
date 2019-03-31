@@ -2,6 +2,7 @@ package com.pmbrull.frontend.Index
 
 import scala.scalajs.js
 import js.Dynamic.{ global => g }
+import scalatags.JsDom._
 
 object Index {
 
