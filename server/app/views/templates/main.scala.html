@@ -48,7 +48,7 @@
     </div>
     <!-- !Sidenav HTML -->
 
-    <div class="content">
+    <div id="content">
         @content
         @scalajs.html.scripts("client", routes.Application.versioned(_).toString, name => getClass.getResource(s"/public/$name") != null)
     </div>

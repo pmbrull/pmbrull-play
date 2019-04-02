@@ -1,0 +1,10 @@
+@(name: String)
+
+@content = {
+<h2> I am @name </h2>
+<div id="hola"></div>
+}
+
+@templates.main("Test", content = content){
+<script>com.pmbrull.frontend.Test.main(name)</script>
+}
