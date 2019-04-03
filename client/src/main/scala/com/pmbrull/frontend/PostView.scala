@@ -13,11 +13,16 @@ object PostView {
   @JSExport
   def main(name: String): Unit = {
 
-    dom.document.getElementById("hola").appendChild(
-      section(id:="hola")(
-        h2(s"Welcome to $name page!")
-      ).render
-    )
+    name match {
+      case "hola" =>
+        dom.document.getElementById("content").appendChild(
+          section(id:="post")(
+            h2(s"Welcome to $name page!")
+          ).render
+        )
+      case _ => Error.ErrorView
+    }
+
   }
 
 }

@@ -1,5 +1,6 @@
 package shared
 
+
 case class Post(
                title: String,
                date: java.sql.Date,

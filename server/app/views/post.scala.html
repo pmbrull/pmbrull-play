@@ -1,10 +1,5 @@
 @(name: String)
 
-@content = {
-<h2> I am @name </h2>
-<div id="hola"></div>
-}
-
-@templates.main("Test", content = content){
+@templates.main("Test"){
 <script>com.pmbrull.frontend.PostView().main("@name")</script>
 }
