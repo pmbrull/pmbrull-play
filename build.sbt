@@ -38,7 +38,12 @@ lazy val client = (project in file("client")).settings(commonSettings).settings(
 lazy val shared = crossProject(JSPlatform, JVMPlatform)
   .crossType(CrossType.Pure)
   .in(file("shared"))
-  .settings(commonSettings)
+  .settings(
+    commonSettings,
+    libraryDependencies ++= Seq(
+      "org.scala-js" %%% "scalajs-dom" % "0.9.5"
+    )
+  ).enablePlugins(ScalaJSPlugin, ScalaJSWeb)
 
 lazy val sharedJvm = shared.jvm
 lazy val sharedJs = shared.js
