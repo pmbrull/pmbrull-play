@@ -1,10 +1,14 @@
 import sbtcrossproject.{crossProject, CrossType}
+import sbt.Project.projectToRef
 
 name := """pmbrull"""
 version := "1.0-SNAPSHOT"
 
+lazy val clients = Seq(client)
+
 lazy val server = (project in file("server")).settings(commonSettings).settings(
-  scalaJSProjects := Seq(client),
+  scalaJSProjects := clients,
+  routesImport += "config.Routes._",
   pipelineStages in Assets := Seq(scalaJSPipeline),
   pipelineStages := Seq(digest, gzip),
   // triggers scalaJSPipeline when using compile or continuous compilation
@@ -17,9 +21,8 @@ lazy val server = (project in file("server")).settings(commonSettings).settings(
   // add heroku plugins
   herokuAppName in Compile := "pmbrull",
   herokuSkipSubProjects in Compile := false,
-  // Compile the project before generating Eclipse files, so that generated .scala or .class files for views and routes are present
-  EclipseKeys.preTasks := Seq(compile in Compile)
 ).enablePlugins(PlayScala).
+  aggregate(clients.map(projectToRef):_*).
   dependsOn(sharedJvm)
 
 lazy val client = (project in file("client")).settings(commonSettings).settings(
@@ -35,8 +38,13 @@ lazy val client = (project in file("client")).settings(commonSettings).settings(
 lazy val shared = crossProject(JSPlatform, JVMPlatform)
   .crossType(CrossType.Pure)
   .in(file("shared"))
+  .settings(
+    commonSettings,
+    libraryDependencies ++= Seq(
+      "org.scala-js" %%% "scalajs-dom" % "0.9.5"
+    )
+  ).enablePlugins(ScalaJSPlugin, ScalaJSWeb)
 
-  .settings(commonSettings)
 lazy val sharedJvm = shared.jvm
 lazy val sharedJs = shared.js
 

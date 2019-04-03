@@ -48,14 +48,18 @@
     </div>
     <!-- !Sidenav HTML -->
 
-    <div class="content">
+    <div id="content">
         @content
-        @scalajs.html.scripts("client", routes.Application.versioned(_).toString, name => getClass.getResource(s"/public/$name") != null)
     </div>
 
 </div>
-</body>
+
     <script src="@routes.Application.versioned("scripts/jquery-3.3.1.min.js")"></script>
-    <!--<script src="@routes.Application.versioned("scripts/bootstrap.min.js")"></script>-->
+        <!--<script src="@routes.Application.versioned("scripts/bootstrap.min.js")"></script>-->
     <script src="@routes.Application.versioned("scripts/sidenav.js")"></script>
+    @scalajs.html.scripts("client", routes.Application.versioned(_).toString, name => getClass.getResource(s"/public/$name") != null)
+    @javascripts
+
+
+</body>
 </html>
