@@ -4,7 +4,7 @@ import controllers.Assets.Asset
 import javax.inject._
 import play.api.mvc._
 
-class TestController @Inject() (components: ControllerComponents, assets: Assets)
+class PostController @Inject()(components: ControllerComponents, assets: Assets)
   extends AbstractController(components) {
 
   def index(name: String) = Action {

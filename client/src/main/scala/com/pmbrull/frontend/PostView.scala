@@ -8,7 +8,7 @@ import scalatags.JsDom.all._
 import scala.scalajs.js.annotation.JSExport
 
 @JSExport
-object Test {
+object PostView {
 
   @JSExport
   def main(name: String): Unit = {
