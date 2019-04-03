@@ -1,11 +1,10 @@
 package com.pmbrull.frontend
 
 import org.scalajs.dom
-import scalatags.JsDom._
-import tags2.section
-import scalatags.JsDom.all._
-
+import org.scalajs.dom.html.Element
 import scala.scalajs.js.annotation.JSExport
+
+import posts._
 
 @JSExport
 object PostView {
@@ -14,15 +13,15 @@ object PostView {
   def main(name: String): Unit = {
 
     name match {
-      case "hola" =>
-        dom.document.getElementById("content").appendChild(
-          section(id:="post")(
-            h2(s"Welcome to $name page!")
-          ).render
-        )
+      case "test" => addDom(Test.getPost.body)
       case _ => Error.ErrorView
     }
+  }
 
+  def addDom(post: Element) = {
+    dom.document
+      .getElementById(elementId = "content")
+      .appendChild(post)
   }
 
 }
