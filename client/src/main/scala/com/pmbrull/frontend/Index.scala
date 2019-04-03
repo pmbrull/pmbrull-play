@@ -11,7 +11,7 @@ object Index {
 
   def main(args: Array[String]): Unit = {
 
-    dom.document.getElementById("content").appendChild(
+    dom.document.getElementById("index").appendChild(
               section(id:="index")(
                 h2(args),
                 h2("Welcome to the Landing Page!")

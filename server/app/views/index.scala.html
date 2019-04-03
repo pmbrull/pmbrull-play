@@ -1,6 +1,12 @@
 @()
 
-@templates.main("Welcome"){
+@content = {
 
-    <script>com.pmbrull.frontend.Index.main()</script>
+<div id="index"></div>
+
+}
+
+@templates.main("Welcome", content = content){
+
+    <script>com.pmbrull.frontend.Index().main()</script>
 }
