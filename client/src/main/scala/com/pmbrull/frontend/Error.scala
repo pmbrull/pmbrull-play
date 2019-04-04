@@ -9,7 +9,7 @@ object Error {
 
   def ErrorView = {
     dom.document.getElementById("content").appendChild(
-      section(id:="post")(
+      section(id:="error")(
         h2(s"Page not found!")
       ).render
     )
