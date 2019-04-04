@@ -9,9 +9,10 @@ import shared.{Post, PostTemplate}
 
 object Test extends PostTemplate {
 
-  val title = "Some test tile"
+  val title = "Some test title"
   val date = new Date(2019, 5, 3)
-  val description =
+  val category = "Test"
+  val description: String =
     """
       |BLA bla bla uiuiui lorem ipsum
       |hola
@@ -27,6 +28,6 @@ object Test extends PostTemplate {
     ).render
   }
 
-  def getPost: Post = buildPost(title, date, description)
+  def getPost: Post = buildPost(title, date, category, description)
 
 }
