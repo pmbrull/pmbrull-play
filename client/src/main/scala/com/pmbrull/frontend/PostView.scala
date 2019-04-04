@@ -2,15 +2,15 @@ package com.pmbrull.frontend
 
 import org.scalajs.dom
 import org.scalajs.dom.html.Element
-import scala.scalajs.js.annotation.JSExport
 
+import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
 import posts._
 
-@JSExport
+@JSExportTopLevel("PostView")
 object PostView {
 
   @JSExport
-  def main(name: String): Unit = {
+  def view(name: String): Unit = {
 
     name match {
       case "test" => addDom(Test.getPost.body)
