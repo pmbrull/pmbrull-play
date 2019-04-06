@@ -7,11 +7,11 @@ import scalatags.JsDom.all._
 import scala.scalajs.js.Date
 import shared.{Post, PostTemplate}
 
-object Test extends PostTemplate {
+object SomeTestTitle extends PostTemplate {
 
   val title = "Some test title"
   val date = new Date(2019, 5, 3)
-  val category = "Test"
+  val category = "posts"
   val description: String =
     """
       |BLA bla bla uiuiui lorem ipsum

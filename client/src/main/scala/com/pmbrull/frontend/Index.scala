@@ -5,8 +5,7 @@ import org.scalajs.dom
 import scalatags.JsDom._
 import tags2.section
 import scalatags.JsDom.all._
-
-import shared.Post
+import shared.{Post, Utils}
 
 import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
 
@@ -51,7 +50,7 @@ object Index {
 
   def postPreview(post: Post) = {
     section(id := post.title)(
-      h2(post.title),
+      h2(a(post.title, href := Utils.getPostUrl(post))),
       p(post.date.toDateString),
       p(post.description)
     )

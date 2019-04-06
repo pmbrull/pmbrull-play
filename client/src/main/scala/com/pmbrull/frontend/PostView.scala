@@ -2,8 +2,9 @@ package com.pmbrull.frontend
 
 import org.scalajs.dom
 import org.scalajs.dom.html.Element
-
 import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
+
+import shared.Utils
 import posts._
 
 @JSExportTopLevel("PostView")
@@ -13,7 +14,7 @@ object PostView {
   def view(name: String): Unit = {
 
     name match {
-      case "test" => addDom(Test.getPost.body)
+      case x if x == Utils.postTitleToUrl(SomeTestTitle.getPost) => addDom(SomeTestTitle.getPost.body)
       case _ => Error.ErrorView
     }
   }
