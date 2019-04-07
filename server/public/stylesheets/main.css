@@ -1,6 +1,39 @@
+:root{
+    --primary-color: #406086;
+    --primary-dark: #233647;
+    --primary-light: #96AFCD;
+    --secondary-color: #7F95AD;
+    --secondary-dark: #BACAD9;
+    --secondary-light: #6491CA;
+}
+
 .page {
 	padding-left: 500px;
 	padding-top: 50px;
 }
 
 .tab { margin-left: 40px; }
+.top-padding { margin-top: 30px; }
+
+h1, h2 {
+  color: var(--primary-dark);
+}
+
+.main-link {
+  text-decoration: underline;
+}
+
+/* unvisited link */
+a:link {
+  color: var(--primary-dark);
+}
+
+/* visited link */
+a:visited {
+  color: var(--primary-dark);
+}
+
+/* mouse over link */
+a:hover {
+  color: var(--primary-color);
+}

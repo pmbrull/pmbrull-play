@@ -23,9 +23,11 @@ object Index {
     dom.document.getElementById("content").appendChild(
       section(id:="index")(
         h1("Recent posts"),
-        for {
-          post <- postList
-        } yield postPreview(post)
+        div(cls := "top-padding")(
+          for {
+            post <- postList
+          } yield postPreview(post)
+        )
       ).render
     )
 
@@ -50,7 +52,9 @@ object Index {
 
   def postPreview(post: Post) = {
     section(id := post.title)(
-      h2(a(post.title, href := Utils.getPostUrl(post))),
+      h2(cls := "main-link")(
+        a(post.title, href := Utils.getPostUrl(post))
+      ),
       p(cls := "tab")(post.category + " - " + post.date.toLocaleDateString),
       p(post.description)
     )
