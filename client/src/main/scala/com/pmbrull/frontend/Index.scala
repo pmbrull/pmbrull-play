@@ -59,8 +59,8 @@ object Index {
         ),
         div(
           i(cls := "fa fas fa-folder-open annotation"),
-          p(cls := "annotation annotation-title")("Category:"),
-          p(cls := "annotation annotation-content")(post.category) // post.date.toLocaleDateString)
+          p(cls := "annotation annotation-title")("Category: "),
+          button(cls := "btn btn-outline-secondary btn-sm annotation annotation-content")(post.category), // post.date.toLocaleDateString)
         ),
         p(post.description)
       )
