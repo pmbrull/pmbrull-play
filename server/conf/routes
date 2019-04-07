@@ -1,4 +1,5 @@
 GET     /                           controllers.Application.index
 GET     /posts/:name                controllers.PostController.index(name: String)
+GET     /spark-series/:name         controllers.PostController.index(name: String)
 
 GET     /assets/*file               controllers.Application.versioned(path="/public", file: Asset)

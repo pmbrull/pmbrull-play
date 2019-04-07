@@ -52,11 +52,18 @@ object Index {
 
   def postPreview(post: Post) = {
     section(id := post.title)(
-      h2(cls := "main-link")(
-        a(post.title, href := Utils.getPostUrl(post))
-      ),
-      p(cls := "tab")(post.category + " - " + post.date.toLocaleDateString),
-      p(post.description)
+      div(cls := "top-padding")(
+
+        h2(cls := "main-link")(
+          a(post.title, href := Utils.getPostUrl(post))
+        ),
+        div(
+          i(cls := "fa fas fa-folder-open annotation"),
+          p(cls := "annotation annotation-title")("Category:"),
+          p(cls := "annotation annotation-content")(post.category) // post.date.toLocaleDateString)
+        ),
+        p(post.description)
+      )
     )
   }
 

@@ -3,8 +3,9 @@
     --primary-dark: #233647;
     --primary-light: #96AFCD;
     --secondary-color: #7F95AD;
-    --secondary-dark: #BACAD9;
+    --secondary-sLight: #BACAD9;
     --secondary-light: #6491CA;
+    --secondary-dark: #394a5c;
 }
 
 .page {
@@ -15,8 +16,31 @@
 .tab { margin-left: 40px; }
 .top-padding { margin-top: 30px; }
 
-h1, h2 {
+h1, h2, h3 {
   color: var(--primary-dark);
+}
+
+p {
+  color: var(--secondary-dark);
+}
+
+.annotation-block {
+  float: left;
+  display: inline-block;
+}
+
+.annotation-title {
+  padding-left: 8px;
+  font-weight: bold;
+}
+
+.annotation-content {
+  padding-left: 8px;
+}
+
+.annotation {
+  color: var(--secondary-color);
+  display: inline-block;
 }
 
 .main-link {
