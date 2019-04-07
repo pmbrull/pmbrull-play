@@ -1,4 +1,4 @@
-package com.pmbrull.frontend.Index
+package com.pmbrull.frontend
 
 import com.pmbrull.frontend.posts.AllPosts
 import org.scalajs.dom
@@ -51,7 +51,7 @@ object Index {
   def postPreview(post: Post) = {
     section(id := post.title)(
       h2(a(post.title, href := Utils.getPostUrl(post))),
-      p(post.date.toDateString),
+      p(cls := "tab")(post.category + " - " + post.date.toLocaleDateString),
       p(post.description)
     )
   }

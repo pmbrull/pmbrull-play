@@ -2,8 +2,9 @@ package com.pmbrull.frontend
 
 import org.scalajs.dom
 import org.scalajs.dom.html.Element
-import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
+import org.scalajs.dom.raw.Node
 
+import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
 import shared.Utils
 import posts._
 
@@ -19,7 +20,7 @@ object PostView {
     }
   }
 
-  def addDom(post: Element) = {
+  def addDom(post: Element): Node = {
     dom.document
       .getElementById(elementId = "content")
       .appendChild(post)
