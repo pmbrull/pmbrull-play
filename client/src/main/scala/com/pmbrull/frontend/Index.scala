@@ -52,6 +52,13 @@ object Index {
       .take(10)
   }
 
+  /**
+    * For each post, prepare the preview that will contain post title, link,
+    * description and category + update annotation.
+    *
+    * @param post Post to be showed
+    * @return Section for the post
+    */
   def postPreview(post: Post) = {
     section(id := post.title)(
       div(cls := "top-padding")(
@@ -60,7 +67,7 @@ object Index {
           a(post.title, href := Utils.getPostUrl(post))
         ),
         div(
-          postCategoryAnnotation(post.category), // post.date.toLocaleDateString)
+          postCategoryAnnotation(post.category),
           postUpdateAnnotation(post.date)
         ),
         p(post.description)
@@ -68,6 +75,12 @@ object Index {
     )
   }
 
+  /**
+    * Prepares the category annotation for the recent posts listing
+    *
+    * @param category Post category
+    * @return Div with font-awesome logo, title and content for the annotation
+    */
   def postCategoryAnnotation(category: String): TypedTag[Element] = {
     div(cls := "annotation-block")(
       i(cls := "fa fas fa-folder-open annotation"),
@@ -76,6 +89,12 @@ object Index {
     )
   }
 
+  /**
+    * Prepare the update annotation for the recent posts listing
+    *
+    * @param date Post updating date
+    * @return Div with font-awesome logo, title and content for the annotation
+    */
   def postUpdateAnnotation(date: Date): TypedTag[Element] = {
     div(cls := "annotation-block")(
       i(cls := "fa fas fa-calendar annotation"),
