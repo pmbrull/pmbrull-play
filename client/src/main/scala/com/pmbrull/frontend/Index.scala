@@ -2,11 +2,13 @@ package com.pmbrull.frontend
 
 import com.pmbrull.frontend.posts.AllPosts
 import org.scalajs.dom
+import org.scalajs.dom.html.Element
 import scalatags.JsDom._
 import tags2.section
 import scalatags.JsDom.all._
 import shared.{Post, Utils}
 
+import scala.scalajs.js.Date
 import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
 
 @JSExportTopLevel("Index")
@@ -58,12 +60,27 @@ object Index {
           a(post.title, href := Utils.getPostUrl(post))
         ),
         div(
-          i(cls := "fa fas fa-folder-open annotation"),
-          p(cls := "annotation annotation-title")("Category: "),
-          button(cls := "btn btn-outline-secondary btn-sm annotation annotation-content")(post.category), // post.date.toLocaleDateString)
+          postCategoryAnnotation(post.category), // post.date.toLocaleDateString)
+          postUpdateAnnotation(post.date)
         ),
         p(post.description)
       )
+    )
+  }
+
+  def postCategoryAnnotation(category: String): TypedTag[Element] = {
+    div(cls := "annotation-block")(
+      i(cls := "fa fas fa-folder-open annotation"),
+      p(cls := "annotation annotation-title")("Category: "),
+      button(cls := "btn btn-outline-secondary btn-sm annotation annotation-content")(category)
+    )
+  }
+
+  def postUpdateAnnotation(date: Date): TypedTag[Element] = {
+    div(cls := "annotation-block")(
+      i(cls := "fa fas fa-calendar annotation"),
+      p(cls := "annotation annotation-title")("Updated: "),
+      p(cls := "annotation annotation-content")(date.toLocaleDateString())
     )
   }
 
