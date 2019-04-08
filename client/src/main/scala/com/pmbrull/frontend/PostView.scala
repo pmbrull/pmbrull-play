@@ -15,7 +15,7 @@ object PostView {
   def view(name: String): Unit = {
 
     name match {
-      case x if x == Utils.postTitleToUrl(SomeTestTitle.getPost) => addDom(SomeTestTitle.getPost.body)
+      case x if x == Utils.stringToUrl(SomeTestTitle.title) => addDom(SomeTestTitle.getPost.body)
       case _ => Error.ErrorView
     }
   }

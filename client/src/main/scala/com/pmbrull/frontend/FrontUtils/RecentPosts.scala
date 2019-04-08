@@ -6,7 +6,9 @@ import org.scalajs.dom.html.Element
 import scalatags.JsDom._
 import tags2.section
 import scalatags.JsDom.all._
+import shared.Utils.stringToUrl
 import shared.{Post, Utils}
+
 import scala.scalajs.js.Date
 
 object RecentPosts {
@@ -73,7 +75,8 @@ object RecentPosts {
     div(cls := "annotation-block")(
       i(cls := "fa fas fa-folder-open annotation"),
       p(cls := "annotation annotation-title")("Category: "),
-      button(cls := "btn btn-outline-secondary btn-sm annotation annotation-content")(category)
+      a(cls := "btn btn-outline-secondary btn-sm annotation annotation-content",
+        href := "/" + stringToUrl(category))(category)
     )
   }
 
@@ -85,7 +88,7 @@ object RecentPosts {
     */
   def postUpdateAnnotation(date: Date): TypedTag[Element] = {
     div(cls := "annotation-block")(
-      i(cls := "fa fa-calendar annotation"),
+      i(cls := "fa fa-calendar-alt annotation"),
       p(cls := "annotation annotation-title")("Updated: "),
       p(cls := "annotation annotation-content")(date.toLocaleDateString())
     )
