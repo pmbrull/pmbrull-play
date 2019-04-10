@@ -9,4 +9,9 @@ object Utils {
 
   def stringToUrl(s: String): String = s.replaceAll(" ", "-").toLowerCase
 
+  def urlToString(url: String): String = url
+    .split("-")
+    .map(s => s.head.toUpper + s.tail)
+    .mkString(" ")
+
 }

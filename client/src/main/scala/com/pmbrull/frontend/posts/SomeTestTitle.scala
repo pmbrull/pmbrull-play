@@ -24,7 +24,12 @@ object SomeTestTitle extends PostTemplate {
     section(id := "TestPost")(
       h1(title),
       p(date.toLocaleDateString),
-      p("somebody once told me...")
+      p("somebody once told me..."),
+      pre(code(cls := "C#")("""public ActionResult Index()
+                              |    {
+                              |    return View();
+                              |    }""".stripMargin)),
+      pre(code(cls := "Scala")("case class Hola(ketal: String)"))
     ).render
   }
 

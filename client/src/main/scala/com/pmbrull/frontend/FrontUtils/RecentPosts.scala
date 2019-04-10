@@ -19,8 +19,7 @@ object RecentPosts {
   def view(postList: List[Post]): Unit = {
 
     dom.document.getElementById("content").appendChild(
-      section(id:="index")(
-        h1("Recent posts"),
+      section(id:="recent-posts")(
         div(cls := "top-padding")(
           for {
             post <- postList
