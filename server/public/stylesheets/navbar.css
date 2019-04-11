@@ -1,156 +1,87 @@
-.navigation {
-  border: 1px solid rgba(255,255,255,0.1);
-  height: 100%;
-  width: 320px;
-  background-color: var(--primary-color);
-  color: #fff;
-  position: fixed;
-  z-index: 9999;
-  top: 0;
-  right: calc(100% - 320px);
-  transition: right 0.5s;
+.wrapper {
+    display: flex;
+    align-items: stretch;
 }
 
-.navigation .heading {
-  padding: 15px;
-  height: 51px;
-  border-bottom: 1px solid rgba(255,255,255,.1);
-  line-height: 20px;
+#content {
+    margin-left: 100px;
+    margin-right: 400px;
 }
 
-.navigation .menu {
-  list-style-type: none;
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
 }
 
-.navigation .menu li {
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+#sidebar.active {
+    margin-left: -250px;
 }
 
-.navigation .menu a {
-  display: block;
-  padding: 15px;
-  line-height: 20px;
-  color: #fff;
-  text-decoration: none;
-  position: relative;
-  z-index: 0;
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
 }
 
-.navigation .menu a::after {
-  content: '';
-  background-color: rgba(255,255,255,0.1);
-  position: absolute;
-  top: 0;
-  right: 100%;
-  bottom: 0;
-  left: 0;
-  transition: left 0.25s, right 0.25s;
+a[data-toggle="collapse"] {
+    position: relative;
 }
 
-.navigation .menu a:hover::after {
-  right: 0;
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
 }
 
-.navigation .has-menu {
-  position: relative;
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
 }
 
-.navigation .has-menu::before {
-  content: '';
-  border-left: 1px solid rgba(255,255,255,0.1);
-  height: 50px;
-  width: 50px;
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1;
+#sidebar {
+    /* don't forget to add all the previously mentioned styles here too */
+    background: #7386D5;
+    color: #fff;
+    transition: all 0.3s;
 }
 
-.navigation .has-menu::after {
-  content: '\027A4';
-  padding: 15px 0;
-  height: 50px;
-  width: 50px;
-  line-height: 20px;
-  text-align: center;
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  transform: rotate(90deg);
-  transition: transform 0.25s;
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #6d7fcc;
 }
 
-.navigation .has-menu > .menu {
-  overflow: hidden;
-  max-height: auto;
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
 }
 
-.navigation .menu .menu {
-  border-top: 1px solid rgba(255,255,255,0.1);
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
 }
 
-.navigation .has-menu > .menu > li > a {
-  padding-left: 45px;
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
 }
 
-.navigation .has-menu > .menu > li:last-child {
-  border-bottom: none;
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #6d7fcc;
 }
-
-/* Closed States */
-.navigation:not(.open) {
-  right: 100%;
-}
-
-.navigation:not(.open) .toggle-wrapper .show {
-  right: 0px;
-}
-
-.navigation:not(.open) .toggle-wrapper .hide {
-  right: 50px;
-}
-
-.navigation .has-menu:not(.open)::after {
-  transform: rotate(-90deg);
-}
-
-.navigation .has-menu:not(.open) > .menu {
-  border-top: none;
-  max-height: 0;
-}
-
-.navigation .has-menu:not(.open) > .menu > li > a {
-  padding-left: 15px;
-}
-
-.navigation .toggle-wrapper {
-  color: var(--primary-color);
-  height: 52px;
-  width: 51px;
-  background-color: transparent;
-  overflow: hidden;
-  position: absolute;
-  top: -1px;
-  right: calc(0px - 52px);
-}
-
-.navigation .toggle-wrapper span {
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  background-color: transparent;
-  color: inherit;
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  right: 0;
-  transition: right 0.25s;
-}
-
-.navigation .toggle-wrapper .show {
-  right: -50px;
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
 }
