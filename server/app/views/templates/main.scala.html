@@ -10,6 +10,8 @@
 
     <title>pmbrull - @title</title>
 
+    <!-- Navbar font -->
+    <link href='https://fonts.googleapis.com/css?family=Pathway Gothic One' rel='stylesheet'>
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- Lambda icon -->
@@ -22,31 +24,41 @@
     <link rel="stylesheet" media="screen" href="@routes.Application.versioned("stylesheets/navbar.css")" />
     <!-- Syntax highlight -->
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
 </head>
 
 <body>
-<div class="wrapper">
-
-    <label>
-        <input type="checkbox">
-        <span class="menu">
-    <span class="hamburger"></span>
-  </span>
-        <ul>
-            <li>
-                <a href="#">Home</a>
+<nav class="navbar navbar-light navbar-expand-md bg-light justify-content-md-center justify-content-start">
+    <a class="navbar-brand d-md-none d-inline" href=""><!-- brand here --></a>
+    <button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#collapsingNavbar2">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+<!--    <a class="nav-link" href="#"><i class="fa fa-search mr-1"></i></a>-->
+    <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
+        <ul class="navbar-nav mx-auto text-md-center text-left">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
             </li>
-            <li>
-                <a href="#">About</a>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
             </li>
-            <li>
-                <a href="#">Contact</a>
+            <li class="nav-item my-auto">
+                <a class="nav-link navbar-brand mx-2 d-none d-md-inline" href="">&#9776</a>
+<!--                <img src="//placehold.it/120/ccff00" class="rounded-circle">-->
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Categories</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Resume</a>
             </li>
         </ul>
-    </label>
-
+        <ul class="nav navbar-nav flex-row justify-content-md-center justify-content-start flex-nowrap">
+<!--            <li class="nav-item"><a class="nav-link" href=""><i class="fab fa-github"></i></a> </li>-->
+<!--            <li class="nav-item"><a class="nav-link" href=""><i class="fab fa-linkedin"></i></a> </li>-->
+<!--            <li class="nav-item"><a class="nav-link" href=""><i class="fab fa-twitter"></i></a> </li>-->
+        </ul>
+    </div>
+</nav>
 
     <div id="content">
 
@@ -54,11 +66,10 @@
 
     </div>
 
-</div>
-
     <script src="@routes.Application.versioned("scripts/jquery-3.3.1.min.js")"></script>
     <script src="@routes.Application.versioned("scripts/bootstrap.min.js")"></script>
-    <script src="@routes.Application.versioned("scripts/sidenav.js")"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     @scalajs.html.scripts("client", routes.Application.versioned(_).toString, name => getClass.getResource(s"/public/$name") != null)
     @javascripts
 
