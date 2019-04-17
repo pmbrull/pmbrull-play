@@ -1,9 +1,11 @@
 package com.pmbrull.frontend.posts
 
+import com.pmbrull.frontend.FrontUtils.RecentPosts
 import org.scalajs.dom.html.Element
 import scalatags.JsDom._
 import tags2.section
 import scalatags.JsDom.all._
+
 import scala.scalajs.js.Date
 import shared.{Post, PostTemplate}
 
@@ -14,22 +16,22 @@ object SomeTestTitle extends PostTemplate {
   val category = "posts"
   val description: String =
     """
-      |BLA bla bla uiuiui lorem ipsum
-      |hola
-      |holis
+      I am a description
     """.stripMargin
 
 
   def buildBody(title: String): Element = {
     section(id := "TestPost")(
       h1(title),
-      p(date.toLocaleDateString),
       p("somebody once told me..."),
       pre(code(cls := "C#")("""public ActionResult Index()
                               |    {
                               |    return View();
                               |    }""".stripMargin)),
-      pre(code(cls := "Scala")("case class Hola(ketal: String)"))
+      pre(code(cls := "Scala")("case class Hola(ketal: String)")),
+      div(cls := "top-padding "),
+      RecentPosts.postCategoryAnnotation(category),
+      RecentPosts.postUpdateAnnotation(date)
     ).render
   }
 
