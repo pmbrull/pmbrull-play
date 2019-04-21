@@ -1,5 +1,7 @@
 GET     /                           controllers.Application.index
 
+GET     /about                      controllers.Application.about
+
 GET     /:category                  controllers.Application.category(category: String)
 
 GET     /posts/:name                controllers.Application.post(name: String)

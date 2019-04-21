@@ -45,15 +45,14 @@ object RecentPosts {
     * For each post, prepare the preview that will contain post title, link,
     * description and category + update annotation.
     *
-    * @param post Post to be showed
+    * @param post Post to be shown
     * @return Section for the post
     */
   def postPreview(post: Post): TypedTag[Element] = {
     section(id := post.title)(
       div(cls := "top-padding")(
-
-        h2(cls := "main-link")(
-          a(post.title, href := Utils.getPostUrl(post))
+        a(href := Utils.getPostUrl(post))(
+          h2(cls := "main-link")(post.title)
         ),
         div(
           postCategoryAnnotation(post.category),
@@ -63,6 +62,27 @@ object RecentPosts {
       )
     )
   }
+
+  /**
+    * Post preview in card shape
+    *
+    * @param post Post to be shown
+    * @return Section for the post
+    */
+  def postCardPreview(post: Post): TypedTag[Element] = {
+    section(id := post.title)(
+      div(cls := "my-2 mx-auto p-relative bg-white shadow-1 card blue-hover blue-card")(
+        a(cls:= "top-padding", href := Utils.getPostUrl(post))(
+          h2(cls := "mt-0 mb-1")(post.title)
+        ),
+        div(cls := "px-2 py-2")(
+          postCategoryAnnotation(post.category),
+          postUpdateAnnotation(post.date)
+        ),
+        p(post.description)
+      )
+    )
+}
 
   /**
     * Prepares the category annotation for the recent posts listing

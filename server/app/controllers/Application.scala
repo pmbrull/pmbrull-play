@@ -19,5 +19,9 @@ class Application @Inject() (components: ControllerComponents, assets: Assets)
     Ok(views.html.category(category))
   }
 
+  def about: Action[AnyContent] = Action {
+    Ok(views.html.about())
+  }
+
   def versioned(path: String, file: Asset): Action[AnyContent] = assets.versioned(path, file)
 }
