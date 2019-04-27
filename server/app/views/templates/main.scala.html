@@ -74,7 +74,10 @@
 
     <script src="@routes.Application.versioned("scripts/jquery-3.3.1.min.js")"></script>
     <script src="@routes.Application.versioned("scripts/bootstrap.min.js")"></script>
+    <!-- Syntax Hihglight -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <!-- MathJax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
     <script>hljs.initHighlightingOnLoad();</script>
     @scalajs.html.scripts("client", routes.Application.versioned(_).toString, name => getClass.getResource(s"/public/$name") != null)
     @javascripts

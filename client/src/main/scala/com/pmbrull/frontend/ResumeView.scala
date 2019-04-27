@@ -17,13 +17,13 @@ object ResumeView {
       section(id := "Resume")(
         h1("Resume"),
         div(
-          h2("Work Experience"),
+          h2(cls := "top-padding")("Work Experience"),
           h3("Current - Big Data Developer at ServiZurich, Technology Delivery Center"),
           li(
             """ETL development on an on-premise cluster focusing on historical data archival
               |and schema evolution using Spark, Scala, Hive and Avro.""".stripMargin
           ),
-          h3("Feb 2017 to Oct 2018 - Data Analyst and Developer at BaseTIS"),
+          h3(cls := "top-padding")("Feb 2017 to Oct 2018 - Data Analyst and Developer at BaseTIS"),
           li(
             """
               |Alvian Comunicaciones: Designed a solution from scratch for a daily ETL process
@@ -51,7 +51,7 @@ object ResumeView {
         div(cls := "top-padding")(
           h2("Education"),
           h3("Master in Big Data Management, Technologies and Analytics, 9.1/10. UPC School."),
-          h3("Degree in Mathematics, Universitat Politècnica de Catalunya"),
+          h3(cls := "top-padding")("Degree in Mathematics, Universitat Politècnica de Catalunya"),
           li("Erasmus at the École polytechnique Fédérale de Lausanne"),
           li("Thesis: “Simulation and Estimation of Lévy driven stochastic processes.”"),
           h3(cls := "top-padding")("Certifications"),
