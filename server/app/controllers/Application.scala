@@ -23,5 +23,9 @@ class Application @Inject() (components: ControllerComponents, assets: Assets)
     Ok(views.html.about())
   }
 
+  def resume: Action[AnyContent] = Action {
+    Ok(views.html.resume())
+  }
+
   def versioned(path: String, file: Asset): Action[AnyContent] = assets.versioned(path, file)
 }

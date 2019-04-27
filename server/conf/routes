@@ -1,6 +1,7 @@
 GET     /                           controllers.Application.index
 
 GET     /about                      controllers.Application.about
+GET     /resume                     controllers.Application.resume
 
 GET     /:category                  controllers.Application.category(category: String)
 
