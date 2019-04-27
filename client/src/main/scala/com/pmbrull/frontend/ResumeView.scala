@@ -1,7 +1,6 @@
 package com.pmbrull.frontend
 
 import org.scalajs.dom
-import org.scalajs.dom.raw.Element
 import scalatags.JsDom._
 import tags2.section
 import scalatags.JsDom.all._
