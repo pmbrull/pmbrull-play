@@ -6,6 +6,7 @@ import org.scalajs.dom.html.Element
 import scalatags.JsDom._
 import tags2.section
 import scalatags.JsDom.all._
+import shared.Utils
 
 import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
 
@@ -29,7 +30,7 @@ object CategoriesView {
 
   def categoryPreview(category: String): TypedTag[Element] = {
     div(cls := "top-padding")(
-      a(href := "/" + category)(
+      a(href := "/" + Utils.stringToUrl(category))(
         h2(cls := "main-link")(category)
       ))
   }

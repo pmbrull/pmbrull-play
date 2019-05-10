@@ -22,7 +22,7 @@ object CategoryView {
     )
 
     RecentPosts.view(
-      RecentPosts.getOrderedPostList.filter(_.category == category)
+      RecentPosts.getOrderedPostList.filter(p => Utils.stringToUrl(p.category) == category)
     )
   }
 
