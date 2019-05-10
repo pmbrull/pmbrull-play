@@ -23,6 +23,9 @@ object ResumeView {
             """ETL development on an on-premise cluster focusing on historical data archival
               |and schema evolution using Spark, Scala, Hive and Avro.""".stripMargin
           ),
+          li(
+            """Solution migration to Azure Cloud.""".stripMargin
+          ),
           h3(cls := "top-padding")("Feb 2017 to Oct 2018 - Data Analyst and Developer at BaseTIS"),
           li(
             """
