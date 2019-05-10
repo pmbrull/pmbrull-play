@@ -5,7 +5,7 @@ import com.pmbrull.frontend.posts.sparkSeries.PredictingRiskOfCancerKNN
 object _AllPosts {
 
   val postList = List(
-    SomeTestTitle,
+//    SomeTestTitle,
     PredictingRiskOfCancerKNN
   )
 
