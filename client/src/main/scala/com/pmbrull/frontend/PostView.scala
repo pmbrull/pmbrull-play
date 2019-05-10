@@ -1,5 +1,6 @@
 package com.pmbrull.frontend
 
+import com.pmbrull.frontend.posts.sparkSeries.PredictingRiskOfCancerKNN
 import org.scalajs.dom
 import org.scalajs.dom.html.Element
 import org.scalajs.dom.raw.Node
@@ -16,6 +17,7 @@ object PostView {
 
     name match {
       case x if x == Utils.stringToUrl(SomeTestTitle.title) => addDom(SomeTestTitle.getPost.body)
+      case x if x == Utils.stringToUrl(PredictingRiskOfCancerKNN.title) => addDom(PredictingRiskOfCancerKNN.getPost.body)
       case _ => Error.ErrorView
     }
   }
