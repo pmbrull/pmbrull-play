@@ -1,6 +1,6 @@
 package com.pmbrull.frontend.FrontUtils
 
-import com.pmbrull.frontend.posts.AllPosts
+import com.pmbrull.frontend.posts._AllPosts
 import org.scalajs.dom
 import org.scalajs.dom.html.Element
 import scalatags.JsDom._
@@ -35,7 +35,7 @@ object RecentPosts {
     * @return List[Post] ordered by date
     */
   def getOrderedPostList: List[Post] = {
-    AllPosts.postList
+    _AllPosts.postList
       .map(_.getPost)
       .sortBy(_.date.toDateString())
       .take(10)
@@ -69,6 +69,7 @@ object RecentPosts {
     * @param post Post to be shown
     * @return Section for the post
     */
+  @deprecated
   def postCardPreview(post: Post): TypedTag[Element] = {
     section(id := post.title)(
       div(cls := "my-2 mx-auto p-relative bg-white shadow-1 card blue-hover blue-card")(

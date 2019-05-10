@@ -23,6 +23,10 @@ class Application @Inject() (components: ControllerComponents, assets: Assets)
     Ok(views.html.about())
   }
 
+  def categories: Action[AnyContent] = Action {
+    Ok(views.html.categories())
+  }
+
   def resume: Action[AnyContent] = Action {
     Ok(views.html.resume())
   }
