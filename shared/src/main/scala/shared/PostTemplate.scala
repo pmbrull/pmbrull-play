@@ -5,11 +5,12 @@ import scala.scalajs.js.Date
 
 trait PostTemplate {
 
-  def buildPost(title: String, date: Date,
-              description: String): Post = {
+  def buildPost(title: String, date: Date, category: String,
+                description: String): Post = {
     Post(
       title = title,
       date = date,
+      category = category,
       description = description,
       body = buildBody(title)
     )

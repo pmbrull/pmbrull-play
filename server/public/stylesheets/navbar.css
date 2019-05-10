@@ -1,156 +1,79 @@
-.navigation {
-  border: 1px solid rgba(255,255,255,0.1);
-  height: 100%;
-  width: 320px;
-  background-color: #7f1313; /* #1c6682; /* #3689e6; */
-  color: #fff;
-  position: fixed;
-  z-index: 9999;
-  top: 0;
-  right: calc(100% - 320px);
-  transition: right 0.5s;
+@media (min-width: 992px) {
+    .navbar {
+        height:50px;
+    }
 }
 
-.navigation .heading {
-  padding: 15px;
-  height: 51px;
-  border-bottom: 1px solid rgba(255,255,255,.1);
-  line-height: 20px;
+.navbar {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: 'Pathway Gothic One';
 }
 
-.navigation .menu {
-  list-style-type: none;
+.navbar.center .navbar-inner {
+    text-align: center;
 }
 
-.navigation .menu li {
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+.navbar.center .navbar-inner .nav {
+    display:inline-block;
+    float: none;
 }
 
-.navigation .menu a {
-  display: block;
-  padding: 15px;
-  line-height: 20px;
-  color: #fff;
-  text-decoration: none;
-  position: relative;
-  z-index: 0;
+/* change the background color */
+.navbar-custom {
+    background-color: var(--primary-dark);
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: var(--secondary-sLight);
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: var(--secondary-sLight);
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:focus .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #ffffff;
 }
 
-.navigation .menu a::after {
-  content: '';
-  background-color: rgba(255,255,255,0.1);
-  position: absolute;
-  top: 0;
-  right: 100%;
-  bottom: 0;
-  left: 0;
-  transition: left 0.25s, right 0.25s;
+.stroke a:hover::after {
+    opacity: 1;
+}
+.stroke a.active::after {
+    opacity: 1;
+}
+.stroke a::after {
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: .2s;
+    transition-timing-function: linear;
+    content: "\203A";
+    margin-left: 5px;
+}
+.stroke a:hover::before {
+    opacity: 1;
+}
+.stroke a.active::before {
+    opacity: 1;
+}
+.stroke a::before {
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: .2s;
+    transition-timing-function: linear;
+    content: "\2039";
+    margin-right: 5px;
 }
 
-.navigation .menu a:hover::after {
-  right: 0;
+.stroke a {
+    text-decoration: none;
 }
-
-.navigation .has-menu {
-  position: relative;
+li a.active {
+    color: #000;
 }
-
-.navigation .has-menu::before {
-  content: '';
-  border-left: 1px solid rgba(255,255,255,0.1);
-  height: 50px;
-  width: 50px;
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1;
-}
-
-.navigation .has-menu::after {
-  content: '\027A4';
-  padding: 15px 0;
-  height: 50px;
-  width: 50px;
-  line-height: 20px;
-  text-align: center;
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  transform: rotate(90deg);
-  transition: transform 0.25s;
-}
-
-.navigation .has-menu > .menu {
-  overflow: hidden;
-  max-height: auto;
-}
-
-.navigation .menu .menu {
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.navigation .has-menu > .menu > li > a {
-  padding-left: 45px;
-}
-
-.navigation .has-menu > .menu > li:last-child {
-  border-bottom: none;
-}
-
-/* Closed States */
-.navigation:not(.open) {
-  right: 100%;
-}
-
-.navigation:not(.open) .toggle-wrapper .show {
-  right: 0px;
-}
-
-.navigation:not(.open) .toggle-wrapper .hide {
-  right: 50px;
-}
-
-.navigation .has-menu:not(.open)::after {
-  transform: rotate(-90deg);
-}
-
-.navigation .has-menu:not(.open) > .menu {
-  border-top: none;
-  max-height: 0;
-}
-
-.navigation .has-menu:not(.open) > .menu > li > a {
-  padding-left: 15px;
-}
-
-.navigation .toggle-wrapper {
-  color: #7f1313; /* #1c6682; /* #3689e6; */
-  height: 52px;
-  width: 51px;
-  background-color: transparent;
-  overflow: hidden;
-  position: absolute;
-  top: -1px;
-  right: calc(0px - 52px);
-}
-
-.navigation .toggle-wrapper span {
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  background-color: transparent;
-  color: inherit;
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  right: 0;
-  transition: right 0.25s;
-}
-
-.navigation .toggle-wrapper .show {
-  right: -50px;
+a:active, a:hover {
+    outline: 0;
 }

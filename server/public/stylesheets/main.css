@@ -1,4 +1,126 @@
-.page {
-	padding-left: 500px;
-	padding-top: 50px;
+:root{
+    --primary-color: #406086;
+    --primary-dark: #233647;
+    --primary-light: #96AFCD;
+    --secondary-color: #7F95AD;
+    --secondary-sLight: #BACAD9;
+    --secondary-light: #6491CA;
+    --secondary-dark: #394a5c;
+
+    --card-color1: #2196fe;
+}
+
+#content {
+  margin-top: 40px;
+  width: 40%;
+  margin-left: 29%;
+  margin-right: 31%;
+}
+
+.narrow {
+  margin-top: 40px;
+  width: 40%;
+  margin-left: 29%;
+  margin-right: 31%;
+}
+
+.tab { margin-left: 40px; }
+.top-padding { margin-top: 30px; }
+
+h1, h2, h3 {
+  font-family: 'Pathway Gothic One';
+  color: var(--primary-dark);
+}
+
+h1 {
+  text-align: center;
+}
+
+p, li {
+  color: var(--secondary-dark);
+}
+
+.annotation-block {
+  display: inline-block;
+  padding-left: 16px;
+}
+
+.annotation-title {
+  padding-left: 8px;
+  font-weight: bold;
+}
+
+.annotation-content {
+  padding-left: 8px;
+}
+
+.annotation {
+  color: var(--secondary-color);
+  display: inline-block;
+}
+
+.main-link {
+  text-decoration: underline;
+}
+
+/* unvisited link */
+a:link {
+  color: var(--primary-dark);
+}
+
+/* visited link */
+a:visited {
+  color: var(--primary-dark);
+}
+
+/* mouse over link */
+a:hover {
+  color: var(--primary-color);
+}
+
+.btn {
+  margin-left: 8px;
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+code {
+    display: inline-block;
+    margin-left: 40px;
+    width: 680px;
+    border-radius: 5px;
+    border: 1px solid var(--secondary-sLight);
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+underline {
+  text-decoration: underline;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
 }

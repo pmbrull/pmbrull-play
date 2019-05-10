@@ -1,16 +1,6 @@
-$(function(){
-
-  $('.navigation .toggle-wrapper .show').on('click',function(){
-    $('.navigation').addClass('open');
-  });
-  $('.navigation .toggle-wrapper .hide').on('click',function(){
-    $('.navigation').removeClass('open');
-  });
-  $('.navigation .has-menu a').on('click',function(e){
-    e.stopPropagation();
-  });
-  $('.navigation .has-menu').on('click',function(){
-    $(this).toggleClass('open');
-  });
-
-});
+$(document).ready(function(){
+	$('a.target-burger').click(function(e){
+		$('div.container, nav.main-nav, a.target-burger').toggleClass('toggled');
+		e.preventDefault();
+	});//target-burger-click
+});//doc-rdy

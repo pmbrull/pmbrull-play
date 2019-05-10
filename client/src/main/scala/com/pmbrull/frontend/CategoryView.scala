@@ -5,30 +5,25 @@ import org.scalajs.dom
 import scalatags.JsDom._
 import tags2.section
 import scalatags.JsDom.all._
+import shared.Utils
 
 import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
 
-@JSExportTopLevel("Index")
-object Index {
+@JSExportTopLevel("CategoryView")
+object CategoryView {
 
-  /**
-    * Landing page view
-    */
   @JSExport
-  def view(): Unit = {
+  def view(category: String): Unit = {
+
     dom.document.getElementById("content").appendChild(
       section(id := "title")(
-        h1("Recent Posts")
+        h1(Utils.urlToString(category))
       ).render
     )
 
-    RecentPosts.view(RecentPosts.getOrderedPostList)
+    RecentPosts.view(
+      RecentPosts.getOrderedPostList.filter(p => Utils.stringToUrl(p.category) == category)
+    )
   }
-
-  /**
-    * Main always gets executed. Leave it empty
-    * to have control over which views we load.
-    */
-  def main(args: Array[String]): Unit = {}
 
 }

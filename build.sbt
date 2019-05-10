@@ -31,6 +31,7 @@ lazy val client = (project in file("client")).settings(commonSettings).settings(
     "org.scala-js" %%% "scalajs-dom" % "0.9.5",
     "com.lihaoyi" %%% "scalatags" % "0.6.8",
     "com.lihaoyi" %%% "scalarx" % "0.4.0",
+    "com.github.japgolly.scalacss" %%% "ext-scalatags" % "0.5.3",
   )
 ).enablePlugins(ScalaJSPlugin, ScalaJSWeb).
   dependsOn(sharedJs)

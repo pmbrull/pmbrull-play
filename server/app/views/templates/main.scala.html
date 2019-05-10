@@ -10,55 +10,98 @@
 
     <title>pmbrull - @title</title>
 
+    <!-- Navbar font -->
+    <link href='https://fonts.googleapis.com/css?family=Pathway Gothic One' rel='stylesheet'>
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Lambda icon -->
     <link rel="shortcut icon" type="image/png" href="@routes.Application.versioned("images/lambda_circle.png")" />
     <!-- Bootstrap  -->
     <link rel="stylesheet" media="screen" href="@routes.Application.versioned("stylesheets/bootstrap.min.css")" />
     <!-- main CSS -->
     <link rel="stylesheet" media="screen" href="@routes.Application.versioned("stylesheets/main.css")" />
+    <!-- Sidenav -->
     <link rel="stylesheet" media="screen" href="@routes.Application.versioned("stylesheets/navbar.css")" />
-    <!-- Sidenav Scrip -->
+    <!-- Cards -->
+    <link rel="stylesheet" media="screen" href="@routes.Application.versioned("stylesheets/card.css")" />
+    <!-- Syntax highlight -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
 </head>
 
 <body>
-<div class="page">
-
-    <!-- Sidenav HTML -->
-    <div class="sidebar">
-        <div class="navigation open">
-            <div class="toggle-wrapper">
-                <span class="show">&#9776;</span>
-                <span class="hide">&#9866;</span>
-            </div>
-            <div class="heading">pmbru\\</div>
-            <ul class="menu">
-                <li><a href="#!">Home</a></li>
-                <li class="active"><a href="#!">Blog</a></li>
-                <li class="has-menu">
-                    <a href="#!">Category</a>
-                    <ul class="menu">
-                        <li><a href="#!">jQuery</a></li>
-                        <li><a href="#!">HTML5</a></li>
-                        <li><a href="#!">CSS/CSS3</a></li>
-                    </ul>
-                </li>
-                <li><a href="#!">Contact</a></li>
-                <li><a href="#!">About</a></li>
-            </ul>
-        </div>
+<nav class="navbar sticky-top navbar-custom navbar-expand-md justify-content-md-center justify-content-start stroke">
+    <a class="navbar-brand d-md-none d-inline" href=""><!-- brand here --></a>
+    <button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#collapsingNavbar2">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+<!--    <a class="nav-link" href="#"><i class="fa fa-search mr-1"></i></a>-->
+    <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
+        <ul class="navbar-nav mx-auto text-md-center text-left">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item my-auto">
+                <a class="nav-link navbar-brand mx-3 d-none d-md-inline" href="/">&#9778</a>
+<!--                <img src="//placehold.it/120/ccff00" class="rounded-circle">-->
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/categories">Categories</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/resume">Resume</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav flex-row justify-content-md-center justify-content-start flex-nowrap">
+<!--            <li class="nav-item"><a class="nav-link" href=""><i class="fab fa-github"></i></a> </li>-->
+<!--            <li class="nav-item"><a class="nav-link" href=""><i class="fab fa-linkedin"></i></a> </li>-->
+<!--            <li class="nav-item"><a class="nav-link" href=""><i class="fab fa-twitter"></i></a> </li>-->
+        </ul>
     </div>
-    <!-- !Sidenav HTML -->
+</nav>
 
     <div id="content">
+
         @content
+
     </div>
 
-</div>
+    <footer>
+        <div id="disqus_thread" class="narrow"></div>
+    </footer>
 
     <script src="@routes.Application.versioned("scripts/jquery-3.3.1.min.js")"></script>
-        <!--<script src="@routes.Application.versioned("scripts/bootstrap.min.js")"></script>-->
-    <script src="@routes.Application.versioned("scripts/sidenav.js")"></script>
+    <script src="@routes.Application.versioned("scripts/bootstrap.min.js")"></script>
+    <!-- Syntax Hihglight -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <!-- PlotLy -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     @scalajs.html.scripts("client", routes.Application.versioned(_).toString, name => getClass.getResource(s"/public/$name") != null)
     @javascripts
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119936778-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-119936778-1');
+    </script>
+
 
 
 </body>

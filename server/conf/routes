@@ -1,4 +1,12 @@
 GET     /                           controllers.Application.index
-GET     /posts/:name                controllers.PostController.index(name: String)
+
+GET     /about                      controllers.Application.about
+GET     /categories                 controllers.Application.categories
+GET     /resume                     controllers.Application.resume
+
+GET     /:category                  controllers.Application.category(category: String)
+
+GET     /posts/:name                controllers.Application.post(name: String)
+GET     /spark-series/:name         controllers.Application.post(name: String)
 
 GET     /assets/*file               controllers.Application.versioned(path="/public", file: Asset)
