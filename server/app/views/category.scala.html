@@ -1,5 +1,6 @@
+@import shared.Utils
 @(category: String)
 
-@templates.main("@category"){
+@templates.main(Utils.urlToString(category)){
 <script>CategoryView.view("@category")</script>
 }
