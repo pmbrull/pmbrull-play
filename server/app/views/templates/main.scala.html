@@ -87,8 +87,10 @@
         }
       });
     </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+<!--    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>-->
+    <script src="@routes.Application.versioned("scripts/highlight.pack.js")"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+
     @scalajs.html.scripts("client", routes.Application.versioned(_).toString, name => getClass.getResource(s"/public/$name") != null)
     @javascripts
 
