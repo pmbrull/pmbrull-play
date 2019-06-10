@@ -11,24 +11,21 @@ import shared.{Post, PostTemplate}
 
 object SomeTestTitle extends PostTemplate {
 
-  val title = "Some test title"
-  val date = new Date(2019, 5, 3)
-  val category = "posts"
+  val title = "Test Title"
+  val date = new Date(2019, 10, 6)
+  val category = "Random category"
   val description: String =
     """
       I am a description
     """.stripMargin
 
-
   def buildBody(title: String): Element = {
-    section(id := "TestPost")(
+    section(id := "IntroductionToPyTorch")(
       h1(title),
-      p("somebody once told me..."),
-      pre(code(cls := "C#")("""public ActionResult Index()
-                              |    {
-                              |    return View();
-                              |    }""".stripMargin)),
-      pre(code(cls := "Scala")("case class Hola(ketal: String)")),
+      p(cls := "top-padding")(description),
+
+
+
       div(cls := "top-padding "),
       RecentPosts.postCategoryAnnotation(category),
       RecentPosts.postUpdateAnnotation(date)
