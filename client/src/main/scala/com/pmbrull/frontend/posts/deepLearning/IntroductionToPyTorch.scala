@@ -30,6 +30,7 @@ object IntroductionToPyTorch extends PostTemplate {
       p("You can find all the information about the course",
         a(cls := "annotation px-2", href := "https://eu.udacity.com/course/secure-and-private-ai--ud185")("here.")
       ),
+      h2("Into Deep Learning"),
       p(
         """Deep learning has been around for quite a while. However, it just looks like it appeared now. This is because
           |of the evolution undergone by hardware components these last few years. As deep learning techniques require
@@ -107,7 +108,10 @@ object IntroductionToPyTorch extends PostTemplate {
           |    0 & \mbox{otherwise}
           |\end{cases}
           |$$
-          |
+          """.stripMargin
+      ),
+      h2("Modelling Neural Networks"),
+      p("""
           |Now we are ready to prepare our first model. Let's follow the courses example on classifying the MNIST digit data:
         """.stripMargin
       ),
