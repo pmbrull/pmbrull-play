@@ -1,4 +1,4 @@
-package com.pmbrull.frontend.posts
+package com.pmbrull.frontend.posts.deepLearning
 
 import com.pmbrull.frontend.FrontUtils.RecentPosts
 import org.scalajs.dom.html.Element
@@ -9,14 +9,17 @@ import scalatags.JsDom.all._
 import scala.scalajs.js.Date
 import shared.{Post, PostTemplate}
 
-object SomeTestTitle extends PostTemplate {
+object IntroductionToPytorchII extends PostTemplate {
 
-  val title = "Test Title"
-  val date = new Date("2019-06-10") // any-mes-dia
-  val category = "Random category"
+  val title = "Introduction to PyTorch II"
+  val date = new Date("2019-06-10")
+  val category = "Deep Learning"
   val description: String =
     """
-      I am a description
+      After a brief introduction about Deep Learning origins and how we can use PyTorch to create neural networks, we
+      still need to prepare a model that learns from our data. What we prepared was just a carcass, therefore we yet
+      have to develop the methods that convert the forward propagation we defined of the input data into actual
+      information.
     """.stripMargin
 
   def buildBody(title: String): Element = {
