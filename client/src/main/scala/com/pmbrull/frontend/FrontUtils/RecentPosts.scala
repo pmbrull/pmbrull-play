@@ -37,7 +37,8 @@ object RecentPosts {
   def getOrderedPostList: List[Post] = {
     _AllPosts.postList
       .map(_.getPost)
-      .sortBy(_.date.toDateString())
+      .sortBy(_.date.getUTCSeconds())
+      .reverse
       .take(10)
   }
 
