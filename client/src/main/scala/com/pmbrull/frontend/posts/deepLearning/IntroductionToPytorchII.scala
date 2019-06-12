@@ -104,7 +104,8 @@ object IntroductionToPytorchII extends PostTemplate {
           |for e in range(epochs):
           |    running_loss = 0
           |    for images, labels in myBatch:
-          |        # Flatten images, use -1 to let pyTorch infer that dimension based on the first one
+          |        # Flatten images, use -1 to let pyTorch infer
+          |        # that dimension based on the first one
           |        images = images.view(images.shape[0], -1)
           |
           |        # Set gradients to zero, otherwise they get accumulated after each pass
@@ -121,7 +122,25 @@ object IntroductionToPytorchII extends PostTemplate {
           |    else:
           |        print(f"Training loss: {running_loss/len(trainloader)}")""".stripMargin)
       ),
-
+      p(
+        """
+          |Observe how we applied the Negative Log Likelihood Loss criterion. This is just the function
+          |that we define for the loss of the model. Then, after the model is trained, if we need to
+          |check the actual probability of a class, as the output layer gives us the Log of the Softmax,
+          |we need to apply an exponential there.
+          """.stripMargin
+      ),
+      p("""
+          |However, what it is important to note here is that the activation function
+          |defined on the output layer and the loss function need to "match". For example, there is another possible
+          |loss function in PyTorch that we could have chosen for classification algorithms. This is the
+          |Cross Entropy Loss. But using both a Log Softmax
+          |for the output layer and this Cross Entropy Loss will lead to possible errors. This is because
+          |Cross Entropy Loss directly applies the Log Softmax to the resulting values of the net,
+          |meaning that we can just stick with a Linear
+          |output layer rather than applying a second logarithm and then run a Softmax to get back the actual probabilities.
+        """.stripMargin
+      ),
 
 
 
