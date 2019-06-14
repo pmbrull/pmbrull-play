@@ -10,6 +10,36 @@
     --card-color1: #2196fe;
 }
 
+@media (min-width: 768px) {
+    .container-small {
+        width: 380px;
+    }
+    .container-large {
+        width: 970px;
+    }
+}
+@media (min-width: 992px) {
+    .container-small {
+        width: 650px;
+    }
+    .container-large {
+        width: 1170px;
+    }
+}
+@media (min-width: 1200px) {
+    .container-small {
+        width: 850px;
+    }
+    .container-large {
+        width: 1500px;
+    }
+}
+
+.container-small, .container-large {
+    max-width: 100%;
+}
+
+/*
 #content {
   margin-top: 40px;
   width: 40%;
@@ -23,7 +53,7 @@
   margin-left: 29%;
   margin-right: 31%;
 }
-
+*/
 .tab { margin-left: 40px; }
 .top-padding { margin-top: 30px; }
 
