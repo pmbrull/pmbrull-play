@@ -77,3 +77,9 @@ li a.active {
 a:active, a:hover {
     outline: 0;
 }
+
+.navbar-toggle-label {
+    color: var(--secondary-sLight);
+    display: block;
+    float: none;
+}

@@ -32,12 +32,14 @@
 
 <body>
 <nav class="navbar sticky-top navbar-custom navbar-expand-md justify-content-md-center justify-content-start stroke">
-    <a class="navbar-brand d-md-none d-inline" href=""><!-- brand here --></a>
-    <button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#collapsingNavbar2">
-        <span class="navbar-toggler-icon"></span>
+<!--    <a class="navbar-brand d-md-none d-inline" href="">pmbru\\</a>-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar2">
+<!--        <span class="navbar-toggler-icon"></span>-->
+        <span class="navbar-toggle-label">&#9778</span>
+<!--        <span class="sr-only">(toggle)</span>-->
     </button>
 <!--    <a class="nav-link" href="#"><i class="fa fa-search mr-1"></i></a>-->
-    <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
+    <div class="tab navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
         <ul class="navbar-nav mx-auto text-md-center text-left">
             <li class="nav-item">
                 <a class="nav-link" href="/">Home</a>
@@ -64,20 +66,17 @@
     </div>
 </nav>
 
-    <div id="content">
-
+<!--    <div id="content">-->
+<div class="container container-small justify-content-md-center justify-content-start top-padding" id="content">
         @content
-
-    </div>
+</div>
 
     <footer>
-        <div id="disqus_thread" class="narrow"></div>
+        <div id="disqus_thread" class="container container-small justify-content-md-center justify-content-start top-padding"></div>
     </footer>
 
     <script src="@routes.Application.versioned("scripts/jquery-3.3.1.min.js")"></script>
     <script src="@routes.Application.versioned("scripts/bootstrap.min.js")"></script>
-    <!-- Syntax Hihglight -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
     <!-- PlotLy -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>
     <!-- MathJax -->
@@ -89,7 +88,8 @@
         }
       });
     </script>
-<!--    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    <!-- HighlightJS -->
     <script src="@routes.Application.versioned("scripts/highlight.pack.js")"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
@@ -97,14 +97,15 @@
     @javascripts
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119936778-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119936778-2"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'UA-119936778-1');
+      gtag('config', 'UA-119936778-2');
     </script>
+
 
 
 

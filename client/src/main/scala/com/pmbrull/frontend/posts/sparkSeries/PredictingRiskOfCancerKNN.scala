@@ -12,7 +12,7 @@ import shared.{Post, PostTemplate}
 object PredictingRiskOfCancerKNN extends PostTemplate {
 
   val title = "Predicting Risk of Cancer using KNN"
-  val date = new Date(2019, 10, 5)
+  val date = new Date("2018-03-08")
   val category = "Spark Series"
   val description: String =
     """
