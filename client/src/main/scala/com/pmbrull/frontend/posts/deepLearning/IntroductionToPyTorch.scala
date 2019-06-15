@@ -12,7 +12,7 @@ import shared.{Post, PostTemplate}
 object IntroductionToPyTorch extends PostTemplate {
 
   val title = "Introduction to PyTorch I"
-  val date = new Date("2019-08-06")
+  val date = new Date("2019-06-08")
   val category = "Deep Learning"
   val description: String =
     """

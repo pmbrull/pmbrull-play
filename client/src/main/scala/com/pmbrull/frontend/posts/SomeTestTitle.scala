@@ -23,6 +23,9 @@ object SomeTestTitle extends PostTemplate {
     section(id := "IntroductionToPyTorch")(
       h1(title),
       p(cls := "top-padding")(description),
+      pre(cls := "top-padding")(code(cls := "python")(
+        """""".stripMargin)
+      ),
 
 
 

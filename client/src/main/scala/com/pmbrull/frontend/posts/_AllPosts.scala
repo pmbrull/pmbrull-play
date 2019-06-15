@@ -1,6 +1,6 @@
 package com.pmbrull.frontend.posts
 
-import com.pmbrull.frontend.posts.deepLearning.{IntroductionToPyTorch, IntroductionToPyTorchIII, IntroductionToPytorchII}
+import com.pmbrull.frontend.posts.deepLearning.{IntroductionToPyTorch, IntroductionToPyTorchIII, IntroductionToPyTorchIV, IntroductionToPytorchII}
 import com.pmbrull.frontend.posts.sparkSeries.PredictingRiskOfCancerKNN
 
 object _AllPosts {
@@ -10,7 +10,8 @@ object _AllPosts {
     PredictingRiskOfCancerKNN,
     IntroductionToPyTorch,
     IntroductionToPytorchII,
-    IntroductionToPyTorchIII
+    IntroductionToPyTorchIII,
+    IntroductionToPyTorchIV
   )
 
   val categoryList: List[String] = postList.map(_.getPost.category).distinct
