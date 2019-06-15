@@ -1,6 +1,6 @@
 package com.pmbrull.frontend
 
-import com.pmbrull.frontend.posts.deepLearning.{IntroductionToPyTorch, IntroductionToPyTorchIII, IntroductionToPyTorchIV, IntroductionToPytorchII}
+import com.pmbrull.frontend.posts.deepLearning.{IntroductionToPyTorch, IntroductionToPyTorchIII, IntroductionToPyTorchIV, IntroductionToPyTorchV, IntroductionToPytorchII}
 import com.pmbrull.frontend.posts.sparkSeries.PredictingRiskOfCancerKNN
 import org.scalajs.dom
 import org.scalajs.dom.html.Element
@@ -23,6 +23,7 @@ object PostView {
       case x if x == Utils.stringToUrl(IntroductionToPytorchII.title) => addDom(IntroductionToPytorchII.getPost.body)
       case x if x == Utils.stringToUrl(IntroductionToPyTorchIII.title) => addDom(IntroductionToPyTorchIII.getPost.body)
       case x if x == Utils.stringToUrl(IntroductionToPyTorchIV.title) => addDom(IntroductionToPyTorchIV.getPost.body)
+      case x if x == Utils.stringToUrl(IntroductionToPyTorchV.title) => addDom(IntroductionToPyTorchV.getPost.body)
       case _ => Error.ErrorView
     }
   }
