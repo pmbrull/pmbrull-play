@@ -133,7 +133,7 @@ object IntroductionToPyTorchVI extends PostTemplate {
         """
           |This is not all, though, as we also need to send the data to the right device, as the underlying objects
           |are different: """.stripMargin, p(cls := "icode")("torch.cuda.FloatTensor"), " vs. ",
-        p(cls := "icode")("torch.FloatTensor"), ".", 
+        p(cls := "icode")("torch.FloatTensor"), ".",
           """
             |Therefore, the initial train / test snippet we used a few posts ago becomes something like this:
           """.stripMargin
