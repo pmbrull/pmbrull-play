@@ -1,6 +1,7 @@
 package com.pmbrull.frontend
 
 import com.pmbrull.frontend.posts.deepLearning.{IntroductionToPyTorch, IntroductionToPyTorchIII, IntroductionToPyTorchIV, IntroductionToPyTorchV, IntroductionToPyTorchVI, IntroductionToPytorchII}
+import com.pmbrull.frontend.posts.devops.AWSWithCloudformation
 import com.pmbrull.frontend.posts.sparkSeries.PredictingRiskOfCancerKNN
 import org.scalajs.dom
 import org.scalajs.dom.html.Element
@@ -25,6 +26,7 @@ object PostView {
       case x if x == Utils.stringToUrl(IntroductionToPyTorchIV.title) => addDom(IntroductionToPyTorchIV.getPost.body)
       case x if x == Utils.stringToUrl(IntroductionToPyTorchV.title) => addDom(IntroductionToPyTorchV.getPost.body)
       case x if x == Utils.stringToUrl(IntroductionToPyTorchVI.title) => addDom(IntroductionToPyTorchVI.getPost.body)
+      case x if x == Utils.stringToUrl(AWSWithCloudformation.title) => addDom(AWSWithCloudformation.getPost.body)
       case _ => Error.ErrorView
     }
   }
